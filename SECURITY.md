@@ -9,4 +9,4 @@
 
 ## Reporting a Vulnerability
 
-To report a vulnerability send an email whit all the details to the following addresses: dellarosalavoro@gmail.com or emanueleparadiso06@outlook.it
+To report a vulnerability send an email with all the details to the following addresses: dellarosalavoro@gmail.com or emanueleparadiso06@outlook.it
