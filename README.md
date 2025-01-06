@@ -2,6 +2,10 @@
 
 - ⚠️ **I-Kant is a w.i.p. project, and is still in its conception and coding phase!** ⚠️
 
+#### Multi language support
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/LoSviluppatore/I-Kant/blob/main/README.md)
+[![it](https://img.shields.io/badge/lang-it-red.svg)](https://github.com/LoSviluppatore/I-Kant/blob/main/README.it.md)
+
 ## Abstract
 
 
