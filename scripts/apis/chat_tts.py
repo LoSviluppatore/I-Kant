@@ -1,13 +1,13 @@
-import openai
+from openai import OpenAI
 import simpleaudio as sa  # Per la riproduzione audio in tempo reale
 import asyncio
 
 class ChatTTS:
-    def __init__(self, api_key, model="gpt-4", tts_model="tts-1", voice="alloy"):
+    def __init__(self, api_key, model="gpt-4o-mini", tts_model="tts-1", voice="alloy"):
         """
         Inizializza la classe con i parametri necessari.
         """
-        openai.api_key = api_key
+        self.client = OpenAI(api_key = api_key)
         self.chat_model = model
         self.tts_model = tts_model
         self.voice = voice
@@ -17,11 +17,9 @@ class ChatTTS:
         Genera una risposta alla domanda e riproduce l'audio in tempo reale.
         """
         # Richiesta al modello di completamento in streaming
-        response = openai.ChatCompletion.create(
-            model=self.chat_model,
-            messages=[{"role": "user", "content": prompt}],
-            stream=True
-        )
+        response = self.client.chat.completions.create(model=self.chat_model,
+        messages=[{"role": "user", "content": prompt}],
+        stream=True)
 
         print("Generazione della risposta...\n")
         full_response = ""
@@ -29,7 +27,7 @@ class ChatTTS:
         # Itera attraverso lo stream della risposta
         for chunk in response:
             if "choices" in chunk:
-                delta = chunk["choices"][0].get("delta", {})
+                delta = chunk.choices[0].get("delta", {})
                 if "content" in delta:
                     text = delta["content"]
                     full_response += text
