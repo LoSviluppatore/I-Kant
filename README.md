@@ -62,6 +62,32 @@ The project is set up to guarantee maximum interoperability between developers, 
 
 All the tools we use to work on this project have an OpenSource policy, in line with our principles and with the MIT license under which this product is found. Starting from IDEs for writing code to management software, from the libraries used up to 3D modeling programs. The only proprietary dependencies that this project uses are those of OpenAI, which, despite pressing requests from developers all over the world to release the source code, has decided to adopt a closed source policy towards the end user.
 
+## How to install and run I-Kant
+
+#### [first make sure you have installed python](https://www.python.org/)
+
+- [Download and extract the zip file from github](https://github.com/LoSviluppatore/I-Kant/archive/refs/heads/main.zip) or run:
+
+```bash
+git clone https://github.com/LoSviluppatore/I-Kant.git
+```
+
+- open the terminal and go to the project directory, then run:
+
+```bash
+pip install -r requirements.txt
+```
+> [!NOTE]
+> this may take a bit...
+
+- once the packages are installed run:
+
+```bash
+python .\scripts\main.py
+```
+
+
+
 ## TODOs
 
 - [x] Writing a good documentation (jk, ofc these docs will be improved😉)
@@ -79,23 +105,5 @@ All the tools we use to work on this project have an OpenSource policy, in line 
 - https://neovim.io/doc/
 - https://www.blender.org/
   > This list will be updated in the future, stay tuned...
-
-## How to install and run I-Kant
-
-#### [first make sure you have installed python](https://www.python.org/)
-
-- [install the zip file from github](https://github.com/LoSviluppatore/I-Kant/archive/refs/heads/main.zip)
-
-- open the terminal and go to the project directory, then run:
-
-```bash
-pip install -r requirements.txt
-```
-
-- once the packages are installed run:
-
-```bash
-python .\scripts\main.py
-```
 
 ##### Project created by Mamiliano Della Rosa & Emanuele Paradiso

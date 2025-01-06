@@ -20,11 +20,11 @@ Il software è configurabile su diversi livelli di complessità, rendendosi cos�
 
 > \* Gentilmente raccolti ed elaborati dai nostri amici di OpenAI
 
-## Contents
+## Contenuti
 
 I-Kant® utilizza una vastissima libreria di informazioni in modo da fornire all’utente una risposta più coerente ed esaustiva possibile. Alla base della comprensione linguistica delle domande poste dall’utente viene utilizzata una libreria scritta in Python che sfrutta le API (Application Programming Interface) della compagnia OpenAI, mentre per quanto riguarda la generazione vocale e altre funzionalità grafiche di gestione dei modelli 3d sono state utilizzate le API di ElevenLabs, Blender, PyOpenGL e molte altre.
 
-## How does it work?
+## Come funziona?
 
 Qui puoi avere un diagramma di flusso logico sulla struttura del programma. L'applicazione è ancora nelle sue prime fasi di creazione e questo diagramma potrebbe cambiare nel tempo:
 
@@ -65,6 +65,32 @@ Il progetto è impostato per garantire la massima interoperabilità tra sviluppa
 
 Tutti gli strumenti che utilizziamo per lavorare a questo progetto hanno una politica OpenSource, in linea con i nostri principi e con la licenza MIT sotto cui si trova questo prodotto. A partire dagli IDE per scrivere il codice ai software gestionali, dalle librerie utilizzate fino ai programmi di modellazione 3D. Le uniche dipendenze proprietarie che questo progetto utilizza sono quelle di OpenAI, che nonostante le pressanti richieste da parte degli sviluppatori di tutto il mondo di rilasciare il codice sorgente ha deciso di adottare una politica closed source nei confronti dell’utenza finale.
 
+## Come installare ed eseguire I-Kant
+
+#### [assicurati di avere una installazione aggiornata di python](https://www.python.org/)
+
+- [Scarica ed estrai l'archivio zip da github](https://github.com/LoSviluppatore/I-Kant/archive/refs/heads/main.zip) o esegui:
+
+```bash
+git clone https://github.com/LoSviluppatore/I-Kant.git
+```
+
+- apri il terminale e naviga fino alla cartella, poi lancia:
+
+```bash
+pip install -r requirements.txt
+```
+> [!NOTE]
+> questo potrebbe metterci un po' di tempo...
+
+- una volta che le dipendenze sono installate avvia l'applicazione con:
+
+```bash
+python .\scripts\main.py
+```
+
+
+
 ## TODOs
 
 - [x] Scrivere una buona documentazione (jk, ofc these docs will be improved😉)
@@ -81,6 +107,6 @@ Tutti gli strumenti che utilizziamo per lavorare a questo progetto hanno una pol
 - https://docs.python.org/3.13/
 - https://neovim.io/doc/
 - https://www.blender.org/
-> This list will be updated in the future, stay tuned...
+> Questa lista sarà aggiornata in futuro, rimanete sintonizzati...
 
 ##### Progetto creato da Mamiliano Della Rosa & Emanuele Paradiso
