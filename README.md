@@ -3,13 +3,13 @@
 - ⚠️ **I-Kant is a w.i.p. project, and is still in its conception and coding phase!** ⚠️
 
 #### Multi language support
+
 [![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/LoSviluppatore/I-Kant/blob/main/README.md)
 [![it](https://img.shields.io/badge/lang-it-red.svg)](https://github.com/LoSviluppatore/I-Kant/blob/main/README.it.md)
 
 ## Abstract
 
-
-I-Kant® is an innovative software equipped with a graphical interface (GUI) that integrates artificial neural networks and 3D animation technologies, in order to offer an immersive experience of dialogue with the great philosophers of tradition. Based on a database of over 200 terabytes of raw information* - a mass of data equivalent to millions of books, billions of web pages and countless digital archives - the system is capable of generating coherent conversational simulations, respecting and faithfully reproducing the philosopher's thoughts selected.
+I-Kant® is an innovative software equipped with a graphical interface (GUI) that integrates artificial neural networks and 3D animation technologies, in order to offer an immersive experience of dialogue with the great philosophers of tradition. Based on a database of over 200 terabytes of raw information\* - a mass of data equivalent to millions of books, billions of web pages and countless digital archives - the system is capable of generating coherent conversational simulations, respecting and faithfully reproducing the philosopher's thoughts selected.
 
 The graphical interface features semi-realistic 3D models, designed to faithfully reproduce the physical features and facial expressions of philosophers. These models are controlled dynamically and so that the content of the responses and the related visual expressions are harmonized, significantly improving the quality and immersiveness of the user-system interaction.
 
@@ -78,8 +78,24 @@ All the tools we use to work on this project have an OpenSource policy, in line 
 - https://docs.python.org/3.13/
 - https://neovim.io/doc/
 - https://www.blender.org/
-> This list will be updated in the future, stay tuned...
+  > This list will be updated in the future, stay tuned...
+
+## How to install and run I-Kant
+
+#### [first make sure you have installed python](https://www.python.org/)
+
+- [install the zip file from github](https://github.com/LoSviluppatore/I-Kant/archive/refs/heads/main.zip)
+
+- open the terminal and go to the project directory, then run:
+
+```bash
+pip install -r requirements.txt
+```
+
+- once the packages are installed run:
+
+```bash
+python .\scripts\main.py
+```
 
 ##### Project created by Mamiliano Della Rosa & Emanuele Paradiso
-
-
