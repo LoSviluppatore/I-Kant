@@ -68,6 +68,14 @@ All the tools we use to work on this project have an OpenSource policy, in line 
 - [ ] GUI
 - [ ] Debugging
 
+## References
+
+- https://platform.openai.com/docs/concepts
+- https://docs.python.org/3.13/
+- https://neovim.io/doc/
+- https://www.blender.org/
+> This list will be updated in the future, stay tuned...
+
 ##### Project created by Mamiliano Della Rosa & Emanuele Paradiso
 
 
