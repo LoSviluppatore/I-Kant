@@ -2,6 +2,9 @@ import cv2 as cv
 import mediapipe as mp
 import json
 
+import asyncio
+from chat_tts import ChatTTS
+
 #richiedo i moduli mediapipe per tracciare il viso e per disegnarci sopra.
 mp_face_mesh = mp.solutions.face_mesh
 mp_drawing = mp.solutions.drawing_utils
@@ -59,3 +62,31 @@ while camera.isOpened():
 
 camera.release()
 cv.destroyAllWindows()
+
+
+
+
+
+
+
+
+
+
+
+# My turn Emanuele
+
+# Configura la tua chiave API di OpenAI
+API_KEY = "YOUR_API_KEY"
+
+async def main():
+    # Inizializza la classe ChatTTS
+    chat_tts = ChatTTS(api_key=API_KEY)
+
+    # Chiedi all'utente un prompt
+    prompt = input("Inserisci una domanda: ")
+
+    # Genera e riproduce la risposta in tempo reale
+    await chat_tts.ask_and_speak(prompt)
+
+# Esegui il programma
+if __name__ == "__main__":
