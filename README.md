@@ -77,6 +77,7 @@ git clone https://github.com/LoSviluppatore/I-Kant.git
 ```bash
 pip install -r requirements.txt
 ```
+
 > [!NOTE]
 > this may take a bit...
 
@@ -85,8 +86,6 @@ pip install -r requirements.txt
 ```bash
 python .\scripts\main.py
 ```
-
-
 
 ## TODOs
 

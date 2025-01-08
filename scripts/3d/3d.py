@@ -1,23 +1,22 @@
 import cv2 as cv
-import mediapipe as mp
 import json
-
-#richiedo i moduli mediapipe per tracciare il viso e per disegnarci sopra.
-mp_face_mesh = mp.solutions.face_mesh
-mp_drawing = mp.solutions.drawing_utils
-
-#il primo parametro serve per il primo rilevamento, il secondo per i successivi, il terzo serve per un renderizzare in modo migliore occhi e bocca.
-face_mesh = mp_face_mesh.FaceMesh(
-    min_detection_confidence = 0.6,
-    min_tracking_confidence = 0.5,
-    refine_landmarks = True,
-)
+from landmarking import *
+from utils import serializeObj, deserializeObj
 
 #apro la videocamera 0
 camera = cv.VideoCapture(0)
-# frame_count = 0
+
+#var frame_count per rallentare il processo
+frame_count = 0
 
 while camera.isOpened():
+    frame_count += 1
+    if len(landmark_points) >= 10:
+        serializeObj(landmark_points)
+        for el in deserializeObj():
+            print (el)
+        break
+    
     try:
         ret, frame = camera.read()
 
@@ -26,25 +25,14 @@ while camera.isOpened():
         results = face_mesh.process(rgb_frame)
 
 
-# Sintesi delle Connessioni:
-# FACEMESH_TESSELATION: Triangolazione completa dei punti facciali.
-# FACEMESH_CONTOURS: Contorni principali del viso.
-# FACEMESH_IRISES: Connessioni degli occhi (iridi).
-# FACEMESH_LIPS: Connessioni intorno alla bocca.
-# FACEMESH_FACE_OVAL: Contorno del viso.
-# FACEMESH_LEFT_EYE: Connessioni per l'occhio sinistro.
-# FACEMESH_RIGHT_EYE: Connessioni per l'occhio destro.
+        Landmarking.drawLandmarks(results, frame)
 
-        if results.multi_face_landmarks:
-            for landmark in results.multi_face_landmarks:
-                mp_drawing.draw_landmarks(
-                    image = frame,
-                    landmark_list = landmark,
-                    connections = mp_face_mesh.FACEMESH_LIPS,
-                    # landmark_drawing_spec = None, leva i puntini
-                    landmark_drawing_spec = mp_drawing.DrawingSpec(circle_radius=1, thickness=1),
-                    connection_drawing_spec = mp_drawing.DrawingSpec(color=(255, 0, 0), thickness=1)
-                )
+
+        if frame_count % 8 == 0: #molto lento, ma è una prova
+            Landmarking.extract_landmarks(results)
+
+            frame_count = 0
+
 
         cv.imshow("I-kant_extract_face_mesh", frame)
 
