@@ -13,10 +13,12 @@ def deserializeObj():
 
     
 def serializeObj(landmarks):
-    landmarks_list = deserializeObj()
+    # landmarks_list = deserializeObj()
+    # with open('landmarks.pkl', 'wb') as landmark_file:
+    #     for landmark in landmarks:
+    #         landmarks_list.append(landmark)
+    #     pickle.dump(landmarks_list, landmark_file)
     with open('landmarks.pkl', 'wb') as landmark_file:
-        for landmark in landmarks:
-            landmarks_list.append(landmark)
-        pickle.dump(landmarks_list, landmark_file)
+        pickle.dump(landmarks, landmark_file)
         print("landmark serialized correctly")
 

@@ -1,4 +1,5 @@
 import mediapipe as mp
+from utils import serializeObj
 
 #richiedo i moduli mediapipe per tracciare il viso e per disegnarci sopra.
 mp_face_mesh = mp.solutions.face_mesh
@@ -32,21 +33,37 @@ class Landmarking:
                 mp_drawing.draw_landmarks(
                     image = frame,
                     landmark_list = landmark,
-                    connections = mp_face_mesh.FACEMESH_LIPS,
-                    landmark_drawing_spec = None, #leva i puntini
-                    # landmark_drawing_spec = mp_drawing.DrawingSpec(circle_radius=1, thickness=1),
-                    connection_drawing_spec = mp_drawing.DrawingSpec(color=(255, 0, 0), thickness=1)
+                    connections = mp_face_mesh.FACEMESH_TESSELATION,
+                    # landmark_drawing_spec = None, #leva i puntini
+                    landmark_drawing_spec = mp_drawing.DrawingSpec(circle_radius=1, thickness=1),
+                    # connection_drawing_spec = mp_drawing.DrawingSpec(color=(255, 0, 0), thickness=2)
                 )
 
     @staticmethod
-    def extract_landmarks(results):
+    def extract_landmarks(results, frame_count):
         if results.multi_face_landmarks:
-            try:
-                for landmark in results.multi_face_landmarks:
-                    for connection in mp_face_mesh.FACEMESH_LIPS:
-                        return landmark_points.append({
-                            'start': {'x': landmark.landmark[connection[0]].x, 'y': landmark.landmark[connection[0]].y, 'z': landmark.landmark[connection[0]].z},
-                            'end': {'x': landmark.landmark[connection[1]].x, 'y': landmark.landmark[connection[1]].y, 'z': landmark.landmark[connection[1]].z}
-                        })
-            except Exception as error:
-                return error
+        #     try:
+            for face_landmarks in results.multi_face_landmarks:
+                # landmark_points = []
+                for landmark in face_landmarks.landmark:
+                    landmark_points.append({
+                        'frame': frame_count,
+                        'x': landmark.x,
+                        'y': landmark.y
+                    })
+                    # print(landmark_points)
+                # for connection in mp_face_mesh.FACEMESH_TESSELATION:
+
+                #     # print(connection)
+                #     start_index, end_index = connection
+                #     start_point = landmark.landmark[start_index]
+                #     end_point = landmark.landmark[end_index]
+
+                #     landmark_points.append({
+                #         'start': {'x': start_point.x, 'y': start_point.y, 'z': start_point.z},
+                #         'end': {'x': end_point.x, 'y': end_point.y, 'z': end_point.z}
+                #     })
+        return landmark_points
+
+            # except Exception as error:
+            #     return error
